@@ -8,14 +8,14 @@ st.write("Comprehensive datasets of global earthquake with key attributes for an
 #I have still to write the link to the keggle website
 st.write(data.head(5))
 
-st.subheader("Magnitude")
+st.header("Magnitude")
 st.write("Min: ", data["magnitude"].min())
 st.write("Min: ", data["magnitude"].mean())
 st.write("Min: ", data["magnitude"].max())
 
-st.subheader("Network")
-st.write("Network :")
+st.header("Network")
 # This part can be made differently
-choosen = st.selectbox("",['us','tx','ci','nn','nc','uu','ak'])
+choosen = st.selectbox("Network :",['us','tx','ci','nn','nc','uu','ak'])
 counter = (data["net"].str.contains(choosen)).sum()
 st.write(f"The number of earthquakes for {choosen} :", counter)
+
