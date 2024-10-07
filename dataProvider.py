@@ -15,4 +15,6 @@ st.write("Min: ", data["magnitude"].max())
 
 st.subheader("Network")
 st.write("Network :")
-choosen = st.multiselect(data["net"])
+# This part can be made differently
+choosen = st.multiselect(['us','tx','ci','nn','nc','uu','ak'])
+st.write(f"The number of earthquakes for {choosen} :", data[data["net"] == choosen].count())
