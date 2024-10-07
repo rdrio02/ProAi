@@ -17,5 +17,5 @@ st.subheader("Network")
 st.write("Network :")
 # This part can be made differently
 choosen = st.selectbox("",['us','tx','ci','nn','nc','uu','ak'])
-counter = (data["net"] == choosen).shape()
-st.write(f"The number of earthquakes for {choosen} :", counter)
+counter = (data["net"] == choosen[0]).shape()
+st.write(f"The number of earthquakes for {choosen[0]} :", counter)
