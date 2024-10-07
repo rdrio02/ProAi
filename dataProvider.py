@@ -8,4 +8,4 @@ st.write("Comprehensive datasets of global earthquake with key attributes for an
 #I have still to write the link to the keggle website
 st.write(data.head(5))
 st.subheader("Magnitude")
-st.write("Min: ", data[3].min())
+st.write("Min: ", data[2].min())
