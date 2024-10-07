@@ -7,7 +7,12 @@ st.header("Global Earthquake Data")
 st.write("Comprehensive datasets of global earthquake with key attributes for analysis:")
 #I have still to write the link to the keggle website
 st.write(data.head(5))
+
 st.subheader("Magnitude")
 st.write("Min: ", data["magnitude"].min())
 st.write("Min: ", data["magnitude"].mean())
 st.write("Min: ", data["magnitude"].max())
+
+st.subheader("Network")
+st.write("Network :")
+choosen = st.multiselect(data["net"])
