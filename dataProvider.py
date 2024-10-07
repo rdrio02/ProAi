@@ -16,6 +16,6 @@ st.write("Min: ", data["magnitude"].max())
 st.subheader("Network")
 st.write("Network :")
 # This part can be made differently
-choosen = st.multiselect("",['us','tx','ci','nn','nc','uu','ak'])
-counter = (data["net"] == choosen).sum()
+choosen = st.selectbox("",['us','tx','ci','nn','nc','uu','ak'])
+counter = (data["net"] == choosen).counter
 st.write(f"The number of earthquakes for {choosen} :", counter)
