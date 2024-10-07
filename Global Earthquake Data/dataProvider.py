@@ -2,7 +2,6 @@ import pandas as pd
 import streamlit as st
 
 data = pd.read_csv("earthquakes.csv")
-print(data)
 
 st.title("Global Earthquake Data")
 
