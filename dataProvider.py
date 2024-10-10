@@ -20,3 +20,4 @@ counter = (data["net"].str.contains(choosen)).sum()
 st.write(f"The number of earthquakes for {choosen} :", counter)
 
 st.bar_chart(data)
+print()
