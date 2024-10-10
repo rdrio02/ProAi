@@ -10,17 +10,18 @@ st.write(data.head(5))
 
 st.header("Magnitude")
 st.write("Min: ", data["magnitude"].min())
-st.write("Min: ", data["magnitude"].mean())
-st.write("Min: ", data["magnitude"].max())
+st.write("Mean: ", data["magnitude"].mean())
+st.write("Max: ", data["magnitude"].max())
 
 st.header("Network")
 # This part can be made differently
-choosen = st.selectbox("Network :",['us','tx','ci','nn','nc','uu','ak'])
+choosen = st.selectbox("Network :",data['net'].unique())
 counter = (data["net"].str.contains(choosen)).sum()
 st.write(f"The number of earthquakes for {choosen} :", counter)
 
 
+subData = data['net'].unique()
+subData['numberOfEarthquakes'] = data["net"].unique().sum()
 
-chart_data = counter
-st.bar_chart(chart_data)
+st.bar_chart(subData)
 print()
