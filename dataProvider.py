@@ -19,3 +19,4 @@ choosen = st.selectbox("Network :",['us','tx','ci','nn','nc','uu','ak'])
 counter = (data["net"].str.contains(choosen)).sum()
 st.write(f"The number of earthquakes for {choosen} :", counter)
 
+st.bar_chart(data)
