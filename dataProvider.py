@@ -14,14 +14,18 @@ st.write("Mean: ", data["magnitude"].mean())
 st.write("Max: ", data["magnitude"].max())
 
 st.header("Network")
-# This part can be made differently
 choosen = st.selectbox("Network :",data['net'].unique())
 counter = (data["net"].str.contains(choosen)).sum()
 st.write(f"The number of earthquakes for {choosen} :", counter)
 
+unique_values = data['net'].unique()
+value_counts = data['net'].value_counts()
 
-subData = data['net'].unique()
-subData['numberOfEarthquakes'] = data["net"].unique().sum()
+# Create a DataFrame with unique values and their counts
+subData = pd.DataFrame({
+    'net': value_counts.index,
+    'numberOfEarthquakes': value_counts.values
+})
 
 st.bar_chart(subData)
 print()
