@@ -20,12 +20,13 @@ st.write(f"The number of earthquakes for {choosen} :", counter)
 
 unique_values = data['net'].unique()
 value_counts = data['net'].value_counts()
-
 # Create a DataFrame with unique values and their counts
 subData = pd.DataFrame({
     'net': value_counts.index,
     'numberOfEarthquakes': value_counts.values
 })
 
-st.bar_chart(subData.set_index('net'))
+print(subData)
+
+st.bar_chart(subData.set_index('net'), use_container_width=True)
 print()
