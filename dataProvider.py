@@ -27,5 +27,5 @@ subData = pd.DataFrame({
     'numberOfEarthquakes': value_counts.values
 })
 
-st.bar_chart(subData)
+st.bar_chart(subData.set_index('net'))
 print()
