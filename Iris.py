@@ -11,3 +11,8 @@ st.write(df.head(5))
 
 st.write("Here are some basic information about the database.")
 
+basicStats = ["", 'sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+functions = ["count", "mean", "std", "min", "25%", "50%", "75%", "max"]
+basicStats[""] = functions
+st.write(basicStats)
+for
