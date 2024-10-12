@@ -25,7 +25,5 @@ subData = pd.DataFrame({
     'net': value_counts.index,
     'numberOfEarthquakes': value_counts.values
 })
-
-print(subData)
 st.header("Number of earthquakes")
 st.bar_chart(subData.set_index('net')['numberOfEarthquakes'])
