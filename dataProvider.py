@@ -28,5 +28,5 @@ subData = pd.DataFrame({
 
 print(subData)
 
-st.bar_chart(subData.set_index('net'))
+st.bar_chart(subData.set_index('numberOfEarthquakes'))
 print()
