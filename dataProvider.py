@@ -6,7 +6,7 @@ data = pd.read_csv("earthquakes.csv")
 st.title("Global Earthquake Data")
 st.write("Comprehensive datasets of global earthquake with key attributes for analysis:")
 #I have still to write the link to the keggle website
-st.write(data.head(5))
+st.write(data)
 
 st.header("Magnitude")
 st.write("Min: ", data["magnitude"].min())
