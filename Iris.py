@@ -9,6 +9,7 @@ st.title("Iris Data")
 st.write("Here are the first 5 data rows")
 st.write(df.head(5))
 
+functions = ["count", "mean", "std", "min", "25%", "50%", "75%", "max"]
 basicStats = {
     "": functions,
     'sepal_length': None,
