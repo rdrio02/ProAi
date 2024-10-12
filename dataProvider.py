@@ -27,6 +27,5 @@ subData = pd.DataFrame({
 })
 
 print(subData)
-
+st.header("Number of earthquakes")
 st.bar_chart(subData.set_index('net')['numberOfEarthquakes'])
-print()
