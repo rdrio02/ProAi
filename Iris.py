@@ -15,4 +15,3 @@ basicStats = ["", 'sepal_length', 'sepal_width', 'petal_length', 'petal_width', 
 functions = ["count", "mean", "std", "min", "25%", "50%", "75%", "max"]
 basicStats[""] = functions
 st.write(basicStats)
-for
