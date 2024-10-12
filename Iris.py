@@ -9,9 +9,14 @@ st.title("Iris Data")
 st.write("Here are the first 5 data rows")
 st.write(df.head(5))
 
-st.write("Here are some basic information about the database.")
-
-basicStats = ["", 'sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+basicStats = {
+    "": functions,
+    'sepal_length': None,
+    'sepal_width': None,
+    'petal_length': None,
+    'petal_width': None,
+    'species': None
+}
 functions = ["count", "mean", "std", "min", "25%", "50%", "75%", "max"]
 basicStats[""] = functions
 st.write(basicStats)
