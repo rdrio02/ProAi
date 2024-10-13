@@ -18,7 +18,7 @@ st.header("Data distribution")
 
 
 for i in range(1, 5):
-    st.bar_chart(subData.set_index(i))
+    st.bar_chart(df.set_index(i))
 
 
 
