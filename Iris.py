@@ -10,10 +10,15 @@ st.write("Here are the first 5 data rows")
 st.write(df.head(5))
 
 
-
-st.header("There are some basic statistics: ")
+st.write("There are some basic statistics: ")
 statistics = df.describe()
 st.write(statistics)
+
+st.header("Data distribution")
+
+
+for i in range(1, 5):
+    st.bar_chart(subData.set_index(i))
 
 
 
