@@ -16,10 +16,10 @@ st.write(statistics)
 
 st.header("Data distribution")
 
-
-for col in df.columns[:-1]:
+first10 = df.head(10)
+for col in first10.columns[:-1]:
     st.write(f"Bar chart of {col}")
-    st.bar_chart(df[col])
+    st.bar_chart(first10[col])
 
 
 
