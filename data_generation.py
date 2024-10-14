@@ -12,7 +12,7 @@ subjects = pd.read_csv("subjects.csv")
 
 
 df = pd.concat([firstNames, lastNames, subjects])
-
+st.write(df)
 
 col1, col2 = st.columns(2)
 with st.sidebar:
