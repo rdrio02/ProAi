@@ -11,7 +11,7 @@ lastNames = pd.read_csv("last_names.csv")
 subjects = pd.read_csv("subjects.csv")
 
 
-df = pd.concat(firstNames, lastNames, subjects)
+df = pd.concat([firstNames, lastNames, subjects])
 
 
 col1, col2 = st.columns(2)
