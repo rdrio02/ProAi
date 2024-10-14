@@ -17,20 +17,19 @@ with st.sidebar:
 
 
 
-firstNames = pd.read_csv("first_names.csv").sort()
+firstNames = pd.read_csv("first_names.csv")
 lastNames = pd.read_csv("last_names.csv")
 subjects = pd.read_csv("subjects.csv")
 
 #Get a selection of the subjects
 selectedSubjects = np.random.choice(subjects.squeeze(), numberSubjects, replace=False)
+selectedFirstNames = np.random.choice(firstNames.squeeze(), numberStudents, replace=False)
+selectedLastNames = np.random.choice(lastNames.squeeze(), numberStudents, replace=False)
 
-st.write(firstNames)
+st.write(selectedFirstNames)
+st.write(selectedLastNames)
 
 
-
-
-df = pd.concat([firstNames, lastNames, subjects], axis=0, join='outer')
-st.write(df)
 
 
 
