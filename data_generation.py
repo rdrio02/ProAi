@@ -10,11 +10,9 @@ firstNames = pd.read_csv("first_names.csv")
 lastNames = pd.read_csv("last_names.csv")
 subjects = pd.read_csv("subjects.csv")
 
-lables = ["Student ID","Student name", "Subject", "Grade"]
 
+df = pd.concat(firstNames, lastNames, subjects)
 
-
-df = []
 
 col1, col2 = st.columns(2)
 with st.sidebar:
