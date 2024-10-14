@@ -11,7 +11,7 @@ lastNames = pd.read_csv("last_names.csv")
 subjects = pd.read_csv("subjects.csv")
 
 
-df = pd.concat([firstNames, lastNames, subjects])
+df = pd.concat([firstNames, lastNames, subjects], axis=0, join='outer')
 st.write(df)
 
 col1, col2 = st.columns(2)
@@ -22,6 +22,9 @@ with st.sidebar:
     minimumGrade = st.number_input("Minimum grade", min_value = 0, max_value = 60 ,value=30, step = 1)
     maximumGrade = st.number_input("Maximum grade", min_value = 0, max_value = 60 ,value=30, step = 1)
 #    selectedStudent = st.selectbox("Select student", df['Student name'].unique())
+
+
+
 
 
 
