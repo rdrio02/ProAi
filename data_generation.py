@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-#import numpy as np
+import numpy as np
 #import matplotlib as plt
 #import seaborn as sb
 
@@ -20,6 +20,11 @@ with st.sidebar:
 firstNames = pd.read_csv("first_names.csv")
 lastNames = pd.read_csv("last_names.csv")
 subjects = pd.read_csv("subjects.csv")
+
+
+selectedSubjects = np.random.choice(subjects, numberSubjects)
+
+pd.write(selectedSubjects)
 
 
 
