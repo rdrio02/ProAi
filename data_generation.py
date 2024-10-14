@@ -15,6 +15,7 @@ with st.sidebar:
 
 with col1:
     st.write("a cat")
+    st.write("pp")
 
 with col2:
     st.write("a red cat")
