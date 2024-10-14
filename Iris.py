@@ -1,6 +1,6 @@
 import streamlit as st
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
 
 dataURL = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 columnNames = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
