@@ -10,7 +10,6 @@ st.title("Iris Data")
 st.write("Here are the first 5 data rows")
 st.write(df.head(5))
 
-
 st.write("There are some basic statistics: ")
 statistics = df.describe()
 st.write(statistics)
