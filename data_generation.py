@@ -15,5 +15,7 @@ with st.sidebar:
     st.write(number)
 
 with col1:
+    st.write("s")
 
-
+with col2:
+    st.write("h")
