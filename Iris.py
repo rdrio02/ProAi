@@ -20,7 +20,6 @@ for col in columnNames:
     ax.set_title(col)
     ax.hist(df[col])
     st.pyplot(fig)
-    plt.close(fig)
 
 
 
