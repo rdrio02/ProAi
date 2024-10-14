@@ -11,11 +11,10 @@ subjects = pd.read_csv("subjects.csv")
 col1, col2 = st.columns(2)
 
 with st.sidebar:
-    st.write("hello")
+    number = st.number_input("Insert a number")
+    st.write(number)
 
 with col1:
-    st.write("a cat")
-    st.write("pp")
+
 
 with col2:
-    st.write("a red cat")
