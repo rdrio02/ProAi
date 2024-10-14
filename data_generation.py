@@ -12,4 +12,4 @@ subjects = pd.read_csv("subjects.csv")
 def fragment_function():
     st.write("Hello")
 
-fragment_function
+fragment_function()
