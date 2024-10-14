@@ -1,3 +1,5 @@
+from calendar import month_name
+
 import streamlit as st
 import pandas as pd
 #import numpy as np
@@ -13,11 +15,11 @@ df = []
 
 col1, col2 = st.columns(2)
 with st.sidebar:
-    numberStudents = st.number_input("Number of students")
-    numberSubjects = st.number_input("Number of subjects")
-    gradesPerSubject = st.number_input("Grades per subject")
-    minimumGrade = st.number_input("Minimum grade")
-    maximumGrade = st.number_input("Maximum grade")
+    numberStudents = st.number_input("Number of students", min_value = 1, max_value = 45,placeholder=10, step = 1)
+    numberSubjects = st.number_input("Number of subjects", min_value = 1, max_value = 20, placeholder=10, step = 1)
+    gradesPerSubject = st.number_input("Grades per subject", min_value = 0, max_value = 6, placeholder=3, step = 1)
+    minimumGrade = st.number_input("Minimum grade", min_value = 0, max_value = 60 ,placeholder=30, step = 1)
+    maximumGrade = st.number_input("Maximum grade", min_value = 0, max_value = 60 ,placeholder=30, step = 1)
 #    selectedStudent = st.selectbox("Select student", df['Student'].unique())
 
 
