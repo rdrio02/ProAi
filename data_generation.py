@@ -8,5 +8,10 @@ firstNames = pd.read_csv("first_names.csv")
 lastNames = pd.read_csv("last_names.csv")
 subjects = pd.read_csv("subjects.csv")
 
-with st.form(""):
-    st.header("Insert Data")
+col1, col2 = st.columns(2)
+
+with col1:
+    st.write("a cat")
+
+with col2:
+    st.write("a red cat")
