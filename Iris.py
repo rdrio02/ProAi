@@ -16,9 +16,6 @@ statistics = df.describe()
 st.write(statistics)
 
 st.header("Data distribution")
-
-
-
 for col in columnNames:
     fig, ax = plt.subplots()
     ax.set_title(col)
