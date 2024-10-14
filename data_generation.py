@@ -22,7 +22,7 @@ lastNames = pd.read_csv("last_names.csv")
 subjects = pd.read_csv("subjects.csv")
 
 
-selectedSubjects = np.random.choice(subjects, numberSubjects, replace=False)
+selectedSubjects = np.random.choice(subjects.squeeze(), numberSubjects, replace=False)
 
 st.write(selectedSubjects)
 
