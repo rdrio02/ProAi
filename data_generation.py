@@ -27,8 +27,7 @@ selectedFirstNames = np.random.choice(firstNames.squeeze(), numberStudents, repl
 selectedLastNames = np.random.choice(lastNames.squeeze(), numberStudents, replace=False)
 sortedLastNames = pd.Series(selectedLastNames).sort_values()
 
-st.write(sortedLastNames)
-st.write(selectedLastNames)
+
 
 
 
