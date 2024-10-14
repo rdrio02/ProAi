@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 
 dataURL = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 columnNames = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
@@ -16,10 +17,13 @@ st.write(statistics)
 
 st.header("Data distribution")
 
-first10 = df.head(10)
-for col in first10.columns[:-1]:
-    st.write(f"Bar chart of {col}")
-    st.bar_chart(first10[col])
+
+
+for col in columnNames:
+    fig, ax = plt.subplots()
+    ax.set_title(col)
+    ax.hist(df[col])
+    st.bar_chart(fig)
 
 
 
