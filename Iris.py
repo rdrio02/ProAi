@@ -19,7 +19,7 @@ for col in columnNames:
     fig, ax = plt.subplots()
     ax.set_title(col)
     ax.hist(df[col])
-    st.bar_chart(fig)
+    st.pyplot(fig)
 
 
 
