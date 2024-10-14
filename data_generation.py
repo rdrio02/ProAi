@@ -8,8 +8,5 @@ firstNames = pd.read_csv("first_names.csv")
 lastNames = pd.read_csv("last_names.csv")
 subjects = pd.read_csv("subjects.csv")
 
-@st.fragment
-def fragment_function():
-    st.write("Hello")
-
-fragment_function()
+with st.form(""):
+    st.header("Insert Data")
