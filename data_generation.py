@@ -24,7 +24,7 @@ subjects = pd.read_csv("subjects.csv")
 
 selectedSubjects = np.random.choice(subjects, numberSubjects)
 
-pd.write(selectedSubjects)
+st.write(selectedSubjects)
 
 
 
