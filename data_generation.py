@@ -17,4 +17,4 @@ with st.sidebar:
 with col1:
 
 
-with col2:
+#with col2:
