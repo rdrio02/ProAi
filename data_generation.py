@@ -11,3 +11,5 @@ subjects = pd.read_csv("subjects.csv")
 @st.fragment
 def fragment_function():
     st.write("Hello")
+
+fragment_function
