@@ -23,7 +23,7 @@ lastNames = pd.read_csv("last_names.csv")
 subjects = pd.read_csv("subjects.csv")
 
 #Make dataBase
-data = pd.DataFrame(coluns=['ID', 'Name', 'Subject', 'Grade'])
+data = pd.DataFrame(columns=['ID', 'Name', 'Subject', 'Grade'])
 
 #Get a selection of the subjects
 subjects = np.random.choice(subjects.squeeze(), numberSubjects, replace=False)
