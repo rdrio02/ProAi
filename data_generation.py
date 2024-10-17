@@ -31,7 +31,7 @@ lastNames = np.random.choice(lastNames.squeeze(), numberStudents, replace=False)
 lastNames = sorted(lastNames)
 names = firstNames + " " + lastNames
 
-counter = 0
+counter = 1
 for name in names:
     for  subject in subjects:
         for i in range(gradesPerSubject):
@@ -44,11 +44,10 @@ for name in names:
             data = pd.concat([data ,pd.DataFrame([newRow])], ignore_index=True)
     counter = counter + 1
 
-st.write(data)
-
 
 with col1:
-    st.write("s")
+    st.write(data)
 
 with col2:
-    st.write("h")
+    statistics = data.describe()
+    st.write(statistics)
