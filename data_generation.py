@@ -50,6 +50,7 @@ df = [
     [data['Grade']]
 ]
 
+st.write(df)
 
 
 with col1:
