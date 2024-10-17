@@ -36,7 +36,7 @@ for name in names:
     for  subject in subjects:
         for i in range(gradesPerSubject):
             newRow = {
-                "ID": counter,
+                "Student Id": counter,
                 "Name": name,
                 "Subject": subject,
                 "Grade": random.randint(minimumGrade, maximumGrade)
