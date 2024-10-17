@@ -39,7 +39,7 @@ for name in names:
                 "ID": counter,
                 "Name": name,
                 "Subject": subject,
-                "Grade": random.randint(minimumGrade, maximumGrade)
+                "Grade": np.random.randint(minimumGrade, maximumGrade)
             }
             #newRow = {"ID" : counter, "Name" : name, "Subject" : subject, "Grade" : random.randint(minimumGrade,maximumGrade+1)}
             data = data.append(newRow, ignore_index=True)
