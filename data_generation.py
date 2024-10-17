@@ -46,8 +46,8 @@ for name in names:
 
 
 df = [
-    [data['Student Id']],
-    [data['Grade']]
+    data['Student Id'],
+    data['Grade']
 ]
 
 st.write(df)
