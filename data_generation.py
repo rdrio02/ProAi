@@ -45,10 +45,10 @@ for name in names:
     counter = counter + 1
 
 
+data['Grade'] = pd.to_numeric(data['Grade'], errors='coerce')
+data['Student Id'] = pd.to_numeric(data['Student Id'], errors='coerce')
+
 df = data[['Student Id', 'Grade']]
-
-st.write(df)
-
 
 with col1:
     st.write(data)
