@@ -7,13 +7,6 @@ import random
 
 
 col1, col2 = st.columns(2)
-with st.sidebar:
-    numberStudents = st.number_input("Number of students", min_value = 1, max_value = 45,value=10, step = 1)
-    numberSubjects = st.number_input("Number of subjects", min_value = 1, max_value = 20, value=10, step = 1)
-    gradesPerSubject = st.number_input("Grades per subject", min_value = 0, max_value = 6, value=3, step = 1)
-    minimumGrade = st.number_input("Minimum grade", min_value = 0, max_value = 60 ,value=30, step = 1)
-    maximumGrade = st.number_input("Maximum grade", min_value = 0, max_value = 60 ,value=30, step = 1)
-#    selectedStudent = st.selectbox("Select student", df['Student name'].unique())
 
 
 #Get data from csv files
@@ -49,6 +42,16 @@ data['Grade'] = pd.to_numeric(data['Grade'], errors='coerce')
 data['Student Id'] = pd.to_numeric(data['Student Id'], errors='coerce')
 
 df = data[['Student Id', 'Grade']]
+
+
+
+with st.sidebar:
+    numberStudents = st.number_input("Number of students", min_value = 1, max_value = 45,value=10, step = 1)
+    numberSubjects = st.number_input("Number of subjects", min_value = 1, max_value = 20, value=10, step = 1)
+    gradesPerSubject = st.number_input("Grades per subject", min_value = 0, max_value = 6, value=3, step = 1)
+    minimumGrade = st.number_input("Minimum grade", min_value = 0, max_value = 60 ,value=30, step = 1)
+    maximumGrade = st.number_input("Maximum grade", min_value = 0, max_value = 60 ,value=30, step = 1)
+    selectedStudent = st.selectbox("Select student", df['Student name'].unique())
 
 with col1:
     st.write(data)
