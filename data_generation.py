@@ -37,7 +37,7 @@ for name in names:
     for  subject in subjects:
         for i in range(gradesPerSubject):
             newRow = {"ID" : counter, "Name" : name, "Subject" : subject, "Grade" : random.randint(minimumGrade,maximumGrade+1)}
-            data = data.append(newRow, ignore_index=True)
+            data = data.append(newRow)
     counter = counter + 1
 
 st.write(data)
