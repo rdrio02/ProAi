@@ -32,17 +32,16 @@ lastNames = sorted(lastNames)
 names = firstNames + " " + lastNames
 
 counter = 0
-rows = []
 for name in names:
     for  subject in subjects:
         for i in range(gradesPerSubject):
-            rows.append({
+            newRow = {
                 "ID": counter,
                 "Name": name,
                 "Subject": subject,
                 "Grade": random.randint(minimumGrade, maximumGrade)
-            })
-            data = pd.concat([data ,rows], ignore_index=True)
+            }
+            data = pd.concat([data ,pd.DataFrame([newRow])], ignore_index=True)
     counter = counter + 1
 
 st.write(data)
