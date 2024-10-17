@@ -4,7 +4,6 @@ import numpy as np
 #import matplotlib as plt
 #import seaborn as sb
 import random
-from numpy import random
 
 
 col1, col2 = st.columns(2)
