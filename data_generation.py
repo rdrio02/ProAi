@@ -25,7 +25,7 @@ subjects = pd.read_csv("subjects.csv")
 selectedSubjects = np.random.choice(subjects.squeeze(), numberSubjects, replace=False)
 selectedFirstNames = np.random.choice(firstNames.squeeze(), numberStudents, replace=False)
 selectedLastNames = np.random.choice(lastNames.squeeze(), numberStudents, replace=False)
-sortedLastNames = pd.Series(selectedLastNames).sort_values()
+sortedLastNames = selectedLastNames.sort()
 
 nameList = selectedFirstNames + " " + sortedLastNames
 
