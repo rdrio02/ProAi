@@ -16,20 +16,30 @@ with st.sidebar:
 #    selectedStudent = st.selectbox("Select student", df['Student name'].unique())
 
 
-
+#Get data from csv files
 firstNames = pd.read_csv("first_names.csv")
 lastNames = pd.read_csv("last_names.csv")
 subjects = pd.read_csv("subjects.csv")
 
-#Get a selection of the subjects
-selectedSubjects = np.random.choice(subjects.squeeze(), numberSubjects, replace=False)
-selectedFirstNames = np.random.choice(firstNames.squeeze(), numberStudents, replace=False)
-selectedLastNames = np.random.choice(lastNames.squeeze(), numberStudents, replace=False)
-sortedLastNames = sorted(selectedLastNames)
-st.write(sortedLastNames)
-nameList = selectedFirstNames + " " + sortedLastNames
+#Make dataBase
+data = ['ID', 'Name', 'Subject', 'Grade']
 
-st.write(nameList)
+#Get a selection of the subjects
+subjects = np.random.choice(subjects.squeeze(), numberSubjects, replace=False)
+firstNames = np.random.choice(firstNames.squeeze(), numberStudents, replace=False)
+lastNames = np.random.choice(lastNames.squeeze(), numberStudents, replace=False)
+lastNames = sorted(lastNames)
+names = firstNames + " " + lastNames
+
+counter = 0
+for name in names:
+    for  subject in subjects:
+        for i in range(gradesPerSubject):
+            newRow = {"ID" : counter, "Name" : name, "Subject" : subject, "Grade" : random.randint(minimumGrade,maximumGrade+1)}
+            data = data.append(newRow, ignore_index=True)
+    counter = counter + 1
+
+st.write(data)
 
 
 with col1:
