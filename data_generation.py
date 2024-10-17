@@ -22,7 +22,7 @@ lastNames = pd.read_csv("last_names.csv")
 subjects = pd.read_csv("subjects.csv")
 
 #Make dataBase
-data = pd.DataFrame(columns=['ID', 'Name', 'Subject', 'Grade'])
+data = pd.DataFrame(columns=['Student Id', 'Name', 'Subject', 'Grade'])
 
 #Get a selection of the subjects
 subjects = np.random.choice(subjects.squeeze(), numberSubjects, replace=False)
@@ -45,9 +45,16 @@ for name in names:
     counter = counter + 1
 
 
+df = [
+    [data['Student Id']],
+    [data['Grade']]
+]
+
+
+
 with col1:
     st.write(data)
 
 with col2:
-    statistics = data.describe()
+    statistics = df.describe()
     st.write(statistics)
