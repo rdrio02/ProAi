@@ -26,7 +26,7 @@ selectedSubjects = np.random.choice(subjects.squeeze(), numberSubjects, replace=
 selectedFirstNames = np.random.choice(firstNames.squeeze(), numberStudents, replace=False)
 selectedLastNames = np.random.choice(lastNames.squeeze(), numberStudents, replace=False)
 sortedLastNames = selectedLastNames.sort()
-
+st.write(sortedLastNames)
 nameList = selectedFirstNames + " " + sortedLastNames
 
 st.write(nameList)
