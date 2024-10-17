@@ -4,6 +4,7 @@ import numpy as np
 #import matplotlib as plt
 #import seaborn as sb
 import random
+from numpy import random
 
 
 col1, col2 = st.columns(2)
@@ -35,13 +36,7 @@ counter = 0
 for name in names:
     for  subject in subjects:
         for i in range(gradesPerSubject):
-            newRow = {
-                "ID": counter,
-                "Name": name,
-                "Subject": subject,
-                "Grade": np.random.randint(minimumGrade, maximumGrade)
-            }
-            #newRow = {"ID" : counter, "Name" : name, "Subject" : subject, "Grade" : random.randint(minimumGrade,maximumGrade+1)}
+            newRow = {"ID" : counter, "Name" : name, "Subject" : subject, "Grade" : random.randint(minimumGrade,maximumGrade+1)}
             data = data.append(newRow, ignore_index=True)
     counter = counter + 1
 
