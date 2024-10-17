@@ -45,10 +45,7 @@ for name in names:
     counter = counter + 1
 
 
-df = [
-    data['Student Id'],
-    data['Grade']
-]
+df = data[['Student Id', 'Grade']]
 
 st.write(df)
 
