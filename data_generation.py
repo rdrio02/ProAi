@@ -42,7 +42,7 @@ for name in names:
                 "Subject": subject,
                 "Grade": random.randint(minimumGrade, maximumGrade)
             })
-            data = pd.concat([data ,newRow], ignore_index=True)
+            data = pd.concat([data ,rows], ignore_index=True)
     counter = counter + 1
 
 st.write(data)
