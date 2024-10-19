@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import randomimport
-plotly.express as px
+import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -53,6 +53,23 @@ for name in names:
 data['Grade'] = pd.to_numeric(data['Grade'], errors='coerce')
 data['Student Id'] = pd.to_numeric(data['Student Id'], errors='coerce')
 df = data[['Student Id', 'Grade']]
+
+
+
+# Create histograms using Plotly
+fig_plotly_histogram = px.histogram(data, x='Grade', nbins=20, title="Plotly: Grade Distribution Histogram")
+st.plotly_chart(fig_plotly_histogram)
+
+# Subplot 1: Histogram
+fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+axs[1].scatter(data['Student Id'], data['Grade'], color='red')
+axs[1].set_title('Matplotlib: Grades vs Student ID')
+fig_seaborn, ax = plt.subplots(1, 2, figsize=(12, 5))
+
+# KDE plot
+sns.kdeplot(data['Grade'], fill=True, ax=ax[0])
+ax[0].set_title('Seaborn: KDE of Grades')
+
 
 
 with st.sidebar:
