@@ -39,7 +39,7 @@ for name in names:
                 "Subject": subject,
                 "Grade": random.randint(minimumGrade, maximumGrade)
             }
-            mainTable = pd.concat([mainTable ,pd.dataFrame([newRow])], ignore_index=True)
+            mainTable = pd.concat([mainTable ,pd.DataFrame([newRow])], ignore_index=True)
     counter = counter + 1
 
 
