@@ -67,6 +67,26 @@ fig_plotly_histogram = px.histogram(data,
                                     range_x=[minimumGrade, maximumGrade+1],
                                     title="")
 
+
+# Create Seaborn KDE and histograms for the selected student
+fig_seaborn, ax = plt.subplots(1, 2, figsize=(12, 5))
+
+# Seaborn: KDE plot
+sns.kdeplot(filtered_data['Grade'], fill=True, ax=ax[0], clip=(minimumGrade, maximumGrade))
+ax[0].set_title(f'Seaborn: KDE of Grades for {selectedStudent}')
+ax[0].set_xlabel('Grades')
+ax[0].set_ylabel('Density')
+
+# Seaborn: Histplot
+sns.histplot(filtered_data['Grade'], bins=10, kde=True, ax=ax[1], binrange=(minimumGrade, maximumGrade))
+ax[1].set_title(f'Seaborn: Histogram + KDE for {selectedStudent}')
+ax[1].set_xlabel('Grades')
+ax[1].set_ylabel('Count')
+
+# Show Seaborn plots in Streamlit
+st.pyplot(fig_seaborn)
+
+
 with col1:
     st.write(data)
 
