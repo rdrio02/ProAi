@@ -58,8 +58,10 @@ with st.sidebar:
     selectedStudent = st.selectbox("Select student", data['Name'].unique())
 
 
+
 # Create histograms using Plotly
-fig_plotly_histogram = px.histogram(data,
+filtered_data = data[data['Name'] == selectedStudent]
+fig_plotly_histogram = px.histogram(filtered_data,
                                     x='Grade',
                                     color='Subject',  # Color by subject
                                     nbins=10,
