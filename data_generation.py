@@ -13,9 +13,6 @@ firstNames = pd.read_csv("first_names.csv")
 lastNames = pd.read_csv("last_names.csv")
 subjects = pd.read_csv("subjects.csv")
 
-#Make dataBase
-data = pd.DataFrame(columns=['Student Id', 'Name', 'Subject', 'Grade'])
-
 
 
 
@@ -26,6 +23,9 @@ with st.sidebar:
     minimumGrade = st.number_input("Minimum grade", min_value = 0, max_value = 60 ,value=30, step = 1)
     maximumGrade = st.number_input("Maximum grade", min_value = 0, max_value = 60 ,value=30, step = 1)
     selectedStudent = st.selectbox("Select student", df['Student name'].unique())
+
+#Make dataBase
+data = pd.DataFrame(columns=['Student Id', 'Name', 'Subject', 'Grade'])
 
 
 #Get a selection of the subjects
