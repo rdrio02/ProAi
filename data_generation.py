@@ -54,10 +54,14 @@ data['Grade'] = pd.to_numeric(data['Grade'], errors='coerce')
 data['Student Id'] = pd.to_numeric(data['Student Id'], errors='coerce')
 df = data[['Student Id', 'Grade']]
 
+with st.sidebar:
+    selectedStudent = st.selectbox("Select student", data['Name'].unique())
 
+# Filter data for the selected student
+filtered_data = data[data['Name'] == selectedStudent]
 
 # Create histograms using Plotly
-fig_plotly_histogram = px.histogram(data, x='Grade', nbins=20, title="Plotly: Grade Distribution Histogram")
+fig_plotly_histogram = px.histogram(filtered_data, x='Grade', nbins=20, title="Plotly: Grade Distribution Histogram")
 st.plotly_chart(fig_plotly_histogram)
 
 # Subplot 1: Histogram
@@ -69,11 +73,6 @@ fig_seaborn, ax = plt.subplots(1, 2, figsize=(12, 5))
 # KDE plot
 sns.kdeplot(data['Grade'], fill=True, ax=ax[0])
 ax[0].set_title('Seaborn: KDE of Grades')
-
-
-
-with st.sidebar:
-    selectedStudent = st.selectbox("Select student", data['Name'].unique())
 
 
 with col1:
