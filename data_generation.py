@@ -53,7 +53,7 @@ df = data[['Student Id', 'Grade']]
 
 
 with st.sidebar:
-    selectedStudent = st.selectbox("Select student", df['Student name'].unique())
+    selectedStudent = st.selectbox("Select student", data['Name'].unique())
 
 
 with col1:
