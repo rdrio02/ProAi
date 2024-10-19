@@ -6,6 +6,7 @@ import numpy as np
 import random
 
 
+col1, col2 = st.columns(2)
 
 #Get data from csv files
 firstNames = pd.read_csv("first_names.csv")
