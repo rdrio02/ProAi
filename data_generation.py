@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-#import matplotlib as plt
-#import seaborn as sb
-import random
+import randomimport
+plotly.express as px
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 col1, col2 = st.columns(2)
@@ -47,6 +48,10 @@ for name in names:
 
 
 
+
+
+data['Grade'] = pd.to_numeric(data['Grade'], errors='coerce')
+data['Student Id'] = pd.to_numeric(data['Student Id'], errors='coerce')
 df = data[['Student Id', 'Grade']]
 
 
