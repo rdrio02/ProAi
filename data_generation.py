@@ -59,7 +59,7 @@ with st.sidebar:
 
 
 # Create histograms using Plotly
-fig_plotly_histogram = px.histogram(filtered_data,
+fig_plotly_histogram = px.histogram(data,
                                     x='Grade',
                                     color='Subject',  # Color by subject
                                     nbins=10,
