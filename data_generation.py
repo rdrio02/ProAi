@@ -51,7 +51,7 @@ with st.sidebar:
     gradesPerSubject = st.number_input("Grades per subject", min_value = 0, max_value = 6, value=3, step = 1)
     minimumGrade = st.number_input("Minimum grade", min_value = 0, max_value = 60 ,value=30, step = 1)
     maximumGrade = st.number_input("Maximum grade", min_value = 0, max_value = 60 ,value=30, step = 1)
-    selectedStudent = st.selectbox("Select student", df['Student name'].unique())
+    selectedStudent = st.selectbox("Select student", df[['Student name']].unique())
 
 with col1:
     st.write(data)
