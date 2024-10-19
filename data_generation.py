@@ -63,7 +63,6 @@ fig_plotly_histogram = px.histogram(data,
                                     x='Grade',
                                     color='Subject',  # Color by subject
                                     nbins=10,
-                                    barmode='stack',  # Group bars by subject
                                     range_x=[minimumGrade, maximumGrade],
                                     title=f"Grade Distribution for {selectedStudent} by Subject")
 
