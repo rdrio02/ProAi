@@ -62,8 +62,8 @@ with st.sidebar:
 fig_plotly_histogram = px.histogram(data,
                                     x='Grade',
                                     color='Subject',  # Color by subject
-                                    nbins=10,
-                                    range_x=[minimumGrade, maximumGrade],
+                                    nbins=11,
+                                    range_x=[minimumGrade, maximumGrade+1],
                                     title=f"Grade Distribution for {selectedStudent} by Subject")
 
 # Display Plotly chart
