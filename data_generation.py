@@ -16,13 +16,45 @@ subjects = pd.read_csv("subjects.csv")
 #Creatian of a main table
 data = pd.DataFrame(columns=['Student Id', 'Name', 'Subject', 'Grade'])
 
+# Initialize session state for inputs if they don't exist
+if 'numberStudents' not in st.session_state:
+    st.session_state['numberStudents'] = 10
+if 'numberSubjects' not in st.session_state:
+    st.session_state['numberSubjects'] = 10
+if 'gradesPerSubject' not in st.session_state:
+    st.session_state['gradesPerSubject'] = 3
+if 'minimumGrade' not in st.session_state:
+    st.session_state['minimumGrade'] = 30
+if 'maximumGrade' not in st.session_state:
+    st.session_state['maximumGrade'] = 60
+
 # This is the first part of the sidebar
 with st.sidebar:
-    numberStudents = st.number_input("Number of students", min_value = 1, max_value = 1000,value=10, step = 1)
-    numberSubjects = st.number_input("Number of subjects", min_value = 1, max_value = 20, value=10, step = 1)
-    gradesPerSubject = st.number_input("Grades per subject", min_value = 0, max_value = 6, value=3, step = 1)
-    minimumGrade = st.number_input("Minimum grade", min_value = 0, max_value = 60 ,value=0, step = 1)
-    maximumGrade = st.number_input("Maximum grade", min_value = 0, max_value = 60 ,value=60, step = 1)
+    st.session_state['numberStudents'] = st.number_input("Number of students",
+                                                         min_value=1, max_value=45,
+                                                         value=st.session_state['numberStudents'],
+                                                         step=1)
+
+    st.session_state['numberSubjects'] = st.number_input("Number of subjects",
+                                                         min_value=1, max_value=20,
+                                                         value=st.session_state['numberSubjects'],
+                                                         step=1)
+
+    st.session_state['gradesPerSubject'] = st.number_input("Grades per subject",
+                                                           min_value=1, max_value=6,
+                                                           value=st.session_state['gradesPerSubject'],
+                                                           step=1)
+
+    st.session_state['minimumGrade'] = st.number_input("Minimum grade",
+                                                       min_value=0, max_value=60,
+                                                       value=st.session_state['minimumGrade'],
+                                                       step=1)
+
+    st.session_state['maximumGrade'] = st.number_input("Maximum grade",
+                                                       min_value=st.session_state['minimumGrade'] + 1,
+                                                       max_value=100,
+                                                       value=st.session_state['maximumGrade'],
+                                                       step=1)
 
 
 #Get a selection of the subjects
