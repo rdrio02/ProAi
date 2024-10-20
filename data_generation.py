@@ -67,16 +67,16 @@ fig_plotly_histogram = px.histogram(data,
                                     range_x=[minimumGrade, maximumGrade+1],
                                     title="")
 
-
-# Create Seaborn KDE plot for each subject
+#Seaborn
 fig_seaborn, ax = plt.subplots(figsize=(8, 5))
 
 # Loop through each subject and plot a separate KDE with a different color
 for subject in data['Subject'].unique():
-    subject_data = data[data['Subject'] == subject]
-    sns.kdeplot(data['Grade'], fill=True, ax=ax, label=subject, clip=(minimumGrade, maximumGrade))
+    subject_data = data[data['Subject'] == subject]  # Filter by subject
+    sns.kdeplot(subject_data['Grade'], fill=True, ax=ax, label=subject, clip=(minimumGrade, maximumGrade))
 
 # Set titles and labels
+ax.set_title('Seaborn: KDE of Grades by Subject')
 ax.set_xlabel('Grades')
 ax.set_ylabel('Density')
 
