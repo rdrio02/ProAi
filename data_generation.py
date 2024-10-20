@@ -68,20 +68,25 @@ fig_plotly_histogram = px.histogram(data,
                                     title="")
 
 
-# -----------To continue
-# Create Seaborn KDE and histograms for the selected student
-fig_seaborn, ax = plt.subplots(1, 2, figsize=(12, 5))
+# Create Seaborn KDE plot for each subject
+fig_seaborn, ax = plt.subplots(figsize=(8, 5))
 
-# Seaborn: KDE plot
-sns.kdeplot(data['Grade'], fill=True, color='Subject',ax=ax[0], clip=(minimumGrade, maximumGrade))
-ax[0].set_title(f'Seaborn: KDE of Grades for {selectedStudent}')
-ax[0].set_xlabel('Grades')
-ax[0].set_ylabel('Density')
+# Loop through each subject and plot a separate KDE with a different color
+for subject in filtered_data['Subject'].unique():
+    subject_data = filtered_data[filtered_data['Subject'] == subject]
+    sns.kdeplot(subject_data['Grade'], fill=True, ax=ax, label=subject, clip=(minimumGrade, maximumGrade))
 
+# Set titles and labels
+ax.set_title(f'Seaborn: KDE of Grades for {selectedStudent}')
+ax.set_xlabel('Grades')
+ax.set_ylabel('Density')
 
-# Show Seaborn plots in Streamlit
+# Add legend for subjects
+ax.legend(title="Subject")
+
+# Show Seaborn plot in Streamlit
 st.pyplot(fig_seaborn)
-# -----------To Stop
+
 
 with col1:
     st.write(data)
