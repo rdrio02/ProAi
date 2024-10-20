@@ -80,9 +80,6 @@ ax.set_title('Seaborn: KDE of Grades by Subject')
 ax.set_xlabel('Grades')
 ax.set_ylabel('Density')
 
-# Add legend for subjects
-ax.legend(title="Subject")
-
 # Show Seaborn plot in Streamlit
 st.pyplot(fig_seaborn)
 
