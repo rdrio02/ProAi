@@ -12,6 +12,7 @@ col1, col2 = st.columns(2)
 firstNames = pd.read_csv("first_names.csv")
 lastNames = pd.read_csv("last_names.csv")
 subjects = pd.read_csv("subjects.csv")
+subjects + subjects.to_numpy()
 
 #Creatian of a main table
 data = pd.DataFrame(columns=['Student Id', 'Name', 'Subject', 'Grade'])
