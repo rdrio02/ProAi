@@ -73,7 +73,7 @@ fig_plotly_histogram = px.histogram(data,
 fig_seaborn, ax = plt.subplots(1, 2, figsize=(12, 5))
 
 # Seaborn: KDE plot
-sns.kdeplot(data['Grade'], fill=True, ax=ax[0], clip=(minimumGrade, maximumGrade))
+sns.kdeplot(data['Grade'], fill=True, color='Subject',ax=ax[0], clip=(minimumGrade, maximumGrade))
 ax[0].set_title(f'Seaborn: KDE of Grades for {selectedStudent}')
 ax[0].set_xlabel('Grades')
 ax[0].set_ylabel('Density')
