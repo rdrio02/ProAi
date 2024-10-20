@@ -74,7 +74,7 @@ fig_seaborn, ax = plt.subplots(figsize=(8, 5))
 # Loop through each subject and plot a separate KDE with a different color
 for subject in data['Subject'].unique():
     subject_data = filtered_data[filtered_data['Subject'] == subject]
-    sns.kdeplot(subject_data['Grade'], fill=True, ax=ax, label=subject, clip=(minimumGrade, maximumGrade))
+    sns.kdeplot(data['Grade'], fill=True, ax=ax, label=subject, clip=(minimumGrade, maximumGrade))
 
 # Set titles and labels
 ax.set_xlabel('Grades')
