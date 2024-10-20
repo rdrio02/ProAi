@@ -58,25 +58,25 @@ with st.sidebar:
 
 
 #Get a selection of the subjects
-subjects = np.random.choice(subjects.squeeze(), numberSubjects, replace=False)
-firstNames = np.random.choice(firstNames.squeeze(), numberStudents, replace=False)
-lastNames = np.random.choice(lastNames.squeeze(), numberStudents, replace=False)
-lastNames = sorted(lastNames)
+selected_subjects = np.random.choice(subjects, st.session_state['numberSubjects'], replace=False)
+selected_firstNames = np.random.choice(firstNames, st.session_state['numberStudents'], replace=False)
+selected_lastNames = np.random.choice(lastNames, st.session_state['numberStudents'], replace=False)
+selected_lastNames = sorted(selected_lastNames)
 names = firstNames + " " + lastNames
 
-# This hole algoritm is resposible to make the hole table by making row per row and apending them into the table
+# Generate student data
 counter = 1
 for name in names:
-    for  subject in subjects:
-        for i in range(gradesPerSubject):
+    for subject in selected_subjects:
+        for i in range(st.session_state['gradesPerSubject']):
             newRow = {
                 "Student Id": counter,
                 "Name": name,
                 "Subject": subject,
-                "Grade": random.randint(minimumGrade, maximumGrade)
+                "Grade": random.randint(st.session_state['minimumGrade'], st.session_state['maximumGrade'])
             }
-            data = pd.concat([data ,pd.DataFrame([newRow])], ignore_index=True)
-    counter = counter + 1
+            data = pd.concat([data, pd.DataFrame([newRow])], ignore_index=True)
+    counter += 1
 
 # Repairing created col and making a new set of data to be described later
 data['Grade'] = pd.to_numeric(data['Grade'], errors='coerce')
