@@ -56,7 +56,6 @@ with st.sidebar:
                                                        value=st.session_state['maximumGrade'],
                                                        step=1)
 
-
 #Get a selection of the subjects
 selected_subjects = np.random.choice(subjects, st.session_state['numberSubjects'], replace=False)
 selected_firstNames = np.random.choice(firstNames, st.session_state['numberStudents'], replace=False)
@@ -86,7 +85,14 @@ df = data[['Student Id', 'Grade']]
 # This is the second part of the sidebar
 with st.sidebar:
     selectedStudent = st.selectbox("Select student", data['Name'].unique())
-
+# Download Button
+    csv = data.to_csv(index=False)
+    st.download_button(
+        label="Download data as CSV",
+        data=csv,
+        file_name='student_data.csv',
+        mime='text/csv'
+    )
 
 # Creation of histogram using plotly
 fig_plotly_histogram = px.histogram(data,
@@ -104,8 +110,6 @@ ax.set_xlabel('Grades')
 ax.set_ylabel('Frequency')
 st.pyplot(fig)
 
-
-
 #Seaborn
 fig_seaborn, ax = plt.subplots(figsize=(8, 5))
 
@@ -117,15 +121,10 @@ ax.set_title('Seaborn: KDE of Grades by Subject')
 ax.set_xlabel('Grades')
 ax.set_ylabel('Density')
 
-
-
-
 with col1:
     st.write(data)
-
     # Display Plotly chart
     st.plotly_chart(fig_plotly_histogram)
-
     # Show Seaborn plot in Streamlit
     st.pyplot(fig_seaborn)
 
