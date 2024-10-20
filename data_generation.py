@@ -77,7 +77,6 @@ for subject in filtered_data['Subject'].unique():
     sns.kdeplot(subject_data['Grade'], fill=True, ax=ax, label=subject, clip=(minimumGrade, maximumGrade))
 
 # Set titles and labels
-ax.set_title(f'Seaborn: KDE of Grades for {selectedStudent}')
 ax.set_xlabel('Grades')
 ax.set_ylabel('Density')
 
