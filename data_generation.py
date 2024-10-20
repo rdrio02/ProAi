@@ -66,7 +66,7 @@ fig_plotly_histogram = px.histogram(data,
 
 # Create a Matplotlib plot for the selected student's grades
 fig, ax = plt.subplots()
-ax.hist(filtered_data['Grade'], bins=10, color='blue', alpha=0.7, range=(minimumGrade, maximumGrade))
+ax.hist(data['Grade'], bins=10, color='blue', alpha=0.7, range=(minimumGrade, maximumGrade))
 ax.set_title(f"Matplotlib: Grades Distribution for {selectedStudent}")
 ax.set_xlabel('Grades')
 ax.set_ylabel('Frequency')
