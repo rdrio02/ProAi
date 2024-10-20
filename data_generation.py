@@ -46,9 +46,6 @@ for name in names:
             data = pd.concat([data ,pd.DataFrame([newRow])], ignore_index=True)
     counter = counter + 1
 
-
-
-
 # Repairing created col and making a new set of data to be described later
 data['Grade'] = pd.to_numeric(data['Grade'], errors='coerce')
 data['Student Id'] = pd.to_numeric(data['Student Id'], errors='coerce')
@@ -67,21 +64,28 @@ fig_plotly_histogram = px.histogram(data,
                                     range_x=[minimumGrade, maximumGrade+1],
                                     title="")
 
+# Create a Matplotlib plot for the selected student's grades
+fig, ax = plt.subplots()
+ax.hist(filtered_data['Grade'], bins=10, color='blue', alpha=0.7, range=(minimumGrade, maximumGrade))
+ax.set_title(f"Matplotlib: Grades Distribution for {selectedStudent}")
+ax.set_xlabel('Grades')
+ax.set_ylabel('Frequency')
+st.pyplot(fig)
+
+
+
 #Seaborn
 fig_seaborn, ax = plt.subplots(figsize=(8, 5))
 
-# Loop through each subject and plot a separate KDE with a different color
 for subject in data['Subject'].unique():
     subject_data = data[data['Subject'] == subject]  # Filter by subject
     sns.kdeplot(subject_data['Grade'], fill=True, ax=ax, label=subject, clip=(minimumGrade, maximumGrade))
 
-# Set titles and labels
 ax.set_title('Seaborn: KDE of Grades by Subject')
 ax.set_xlabel('Grades')
 ax.set_ylabel('Density')
 
-# Show Seaborn plot in Streamlit
-st.pyplot(fig_seaborn)
+
 
 
 with col1:
@@ -89,6 +93,9 @@ with col1:
 
     # Display Plotly chart
     st.plotly_chart(fig_plotly_histogram)
+
+    # Show Seaborn plot in Streamlit
+    st.pyplot(fig_seaborn)
 
 with col2:
     statistics = df.describe()
