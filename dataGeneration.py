@@ -63,6 +63,8 @@ selected_subjects = np.random.choice(subjects, number_subjects, replace=False)
 selected_firstNames = np.random.choice(firstNames, number_students, replace=False)
 selected_lastNames = np.random.choice(lastNames, number_students, replace=False)
 
+names = [f"{fn} {ln}" for fn, ln in zip(selected_firstNames, selected_lastNames)]
+
 # Generate student data
 counter = 1
 for name in names:
