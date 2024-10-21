@@ -62,6 +62,9 @@ selected_subjects = random.sample(subjects, number_subjects)
 selected_firstNames = random.sample(firstNames, number_students)
 selected_lastNames = random.sample(lastNames, number_students)
 
+# Create the full names
+names = [f"{fn} {ln}" for fn, ln in zip(selected_firstNames, selected_lastNames)]
+
 # Generate student data
 counter = 1
 for name in names:
