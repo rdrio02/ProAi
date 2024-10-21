@@ -35,34 +35,32 @@ with st.sidebar:
                                                          min_value=1, max_value=45,
                                                          value=st.session_state['numberStudents'],
                                                          step=1)
-
     st.session_state['numberSubjects'] = st.number_input("Number of subjects",
                                                          min_value=1, max_value=20,
                                                          value=st.session_state['numberSubjects'],
                                                          step=1)
-
     st.session_state['gradesPerSubject'] = st.number_input("Grades per subject",
                                                            min_value=1, max_value=6,
                                                            value=st.session_state['gradesPerSubject'],
                                                            step=1)
-
     st.session_state['minimumGrade'] = st.number_input("Minimum grade",
                                                        min_value=0, max_value=60,
                                                        value=st.session_state['minimumGrade'],
                                                        step=1)
-
     st.session_state['maximumGrade'] = st.number_input("Maximum grade",
                                                        min_value=st.session_state['minimumGrade'] + 1,
                                                        max_value=100,
                                                        value=st.session_state['maximumGrade'],
                                                        step=1)
 
+# Ensure the number of subjects and names do not exceed the available list sizes
+number_students = min(st.session_state['numberStudents'], len(firstNames), len(lastNames))
+number_subjects = min(st.session_state['numberSubjects'], len(subjects))
+
 # Select random subjects and names
-number = st.write(st.session_state['numberSubjects'])
-selected_subjects = np.random.choice(subjects, number, replace=False)
-selected_firstNames = np.random.choice(firstNames, st.session_state['numberStudents'], replace=False)
-selected_lastNames = np.random.choice(lastNames, st.session_state['numberStudents'], replace=False)
-names = [f"{fn} {ln}" for fn, ln in zip(selected_firstNames, selected_lastNames)]
+selected_subjects = random.sample(subjects, number_subjects)
+selected_firstNames = random.sample(firstNames, number_students)
+selected_lastNames = random.sample(lastNames, number_students)
 
 # Generate student data
 counter = 1
