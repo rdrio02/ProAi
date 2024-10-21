@@ -67,18 +67,18 @@ selected_lastNames = np.random.choice(lastNames, number_students, replace=False)
 names = [f"{fn} {ln}" for fn, ln in zip(selected_firstNames, selected_lastNames)]
 
 # Generate student data
-counter = 1
+id = 1
 for name in names:
     for subject in selected_subjects:
         for i in range(st.session_state['gradesPerSubject']):
             newRow = {
-                "Student Id": counter,
+                "Student Id": id,
                 "Name": name,
                 "Subject": subject,
                 "Grade": random.randint(st.session_state['minimumGrade'], st.session_state['maximumGrade'])
             }
             data = pd.concat([data, pd.DataFrame([newRow])], ignore_index=True)
-    counter += 1
+    id += 1
 
 # Ensure correct data types
 data['Grade'] = pd.to_numeric(data['Grade'], errors='coerce')
