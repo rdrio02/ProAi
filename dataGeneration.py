@@ -126,8 +126,8 @@ with col1:
     st.write(data)
     st.pyplot(fig)
     st.plotly_chart(fig_plotly_histogram)
-    st.pyplot(fig_seaborn)
 
 with col2:
     statistics = df.describe()
     st.write(statistics)
+    st.pyplot(fig_seaborn)
