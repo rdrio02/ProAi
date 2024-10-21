@@ -10,8 +10,8 @@ import seaborn as sns
 col1, col2 = st.columns(2)
 
 # Load data from CSV files
-firstNames = pd.read_csv("first_names.csv")['Name'].tolist()
-lastNames = pd.read_csv("last_names.csv")['Name'].tolist()
+firstNames = pd.read_csv("first_names.csv")['First name'].tolist()
+lastNames = pd.read_csv("last_names.csv")['Last name'].tolist()
 subjects = pd.read_csv("subjects.csv")['Subject'].tolist()
 
 # Create a main table
