@@ -55,9 +55,9 @@ with st.sidebar:
 
 
 # Select random subjects and names
-selected_subjects = np.random.choice(subjects, st.session_state['numberSubjects'])
-selected_firstNames = np.random.choice(firstNames, st.session_state['numberStudents'])
-selected_lastNames = np.random.choice(lastNames, st.session_state['numberStudents'])
+selected_subjects = np.random.choice(subjects, st.session_state['numberSubjects'], replace=True)
+selected_firstNames = np.random.choice(firstNames, st.session_state['numberStudents'], replace=True)
+selected_lastNames = np.random.choice(lastNames, st.session_state['numberStudents'], replace=True)
 names = [f"{fn} {ln}" for fn, ln in zip(selected_firstNames, selected_lastNames)]
 
 # Generate student data
