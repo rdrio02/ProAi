@@ -10,9 +10,9 @@ import seaborn as sns
 col1, col2 = st.columns(2)
 
 # Load data from CSV files
-firstNames = pd.read_csv("first_names.csv")
-lastNames = pd.read_csv("last_names.csv")
-subjects = pd.read_csv("subjects.csv")
+firstNames = pd.read_csv("first_names.csv")['Name'].tolist()
+lastNames = pd.read_csv("last_names.csv")['Name'].tolist()
+subjects = pd.read_csv("subjects.csv")['Subject'].tolist()
 
 # Create a main table
 data = pd.DataFrame(columns=['Student Id', 'Name', 'Subject', 'Grade'])
@@ -54,11 +54,14 @@ with st.sidebar:
                                                        step=1)
 
 
+# Ensure that the number of subjects and names do not exceed the available list sizes
+number_students = min(st.session_state['numberStudents'], len(firstNames), len(lastNames))
+number_subjects = min(st.session_state['numberSubjects'], len(subjects))
+
 # Select random subjects and names
-selected_subjects = np.random.choice(subjects, st.session_state['numberSubjects'], replace=True)
-selected_firstNames = np.random.choice(firstNames, st.session_state['numberStudents'], replace=True)
-selected_lastNames = np.random.choice(lastNames, st.session_state['numberStudents'], replace=True)
-names = [f"{fn} {ln}" for fn, ln in zip(selected_firstNames, selected_lastNames)]
+selected_subjects = np.random.choice(subjects, number_subjects, replace=False)
+selected_firstNames = np.random.choice(firstNames, number_students, replace=False)
+selected_lastNames = np.random.choice(lastNames, number_students, replace=False)
 
 # Generate student data
 counter = 1
