@@ -111,7 +111,6 @@ ax.hist(student_data['Grade'], bins=10, color='blue', alpha=0.7, range=(st.sessi
 ax.set_title(f"Matplotlib: Grades Distribution for {selectedStudent}")
 ax.set_xlabel('Grades')
 ax.set_ylabel('Frequency')
-st.pyplot(fig)
 
 # Seaborn KDE plot
 fig_seaborn, ax = plt.subplots(figsize=(8, 5))
