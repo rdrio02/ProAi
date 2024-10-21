@@ -19,13 +19,13 @@ data = pd.DataFrame(columns=['Student Id', 'Name', 'Subject', 'Grade'])
 
 # Initialize session state for inputs if they don't exist
 if 'numberStudents' not in st.session_state:
-    st.session_state['numberStudents'] = 10
+    st.session_state['numberStudents'] = 20
 if 'numberSubjects' not in st.session_state:
-    st.session_state['numberSubjects'] = 3
+    st.session_state['numberSubjects'] = 10
 if 'gradesPerSubject' not in st.session_state:
     st.session_state['gradesPerSubject'] = 3
 if 'minimumGrade' not in st.session_state:
-    st.session_state['minimumGrade'] = 30
+    st.session_state['minimumGrade'] = 0
 if 'maximumGrade' not in st.session_state:
     st.session_state['maximumGrade'] = 60
 
