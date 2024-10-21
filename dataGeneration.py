@@ -133,5 +133,5 @@ with col1:
 with col2:
     statistics = df.describe()
     st.write(statistics)
-    st.pyplot(fig)
     st.plotly_chart(fig_plotly_histogram)
+    st.pyplot(fig)
