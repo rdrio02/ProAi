@@ -9,9 +9,9 @@ import seaborn as sns
 col1, col2 = st.columns(2)
 
 #Get data from csv files
-firstNames = pd.read_csv("first_names.csv")['Name'].tolist()
-lastNames = pd.read_csv("last_names.csv")['Name'].tolist()
-subjects = pd.read_csv("subjects.csv")['Subject'].tolist()
+firstNames = pd.read_csv("first_names.csv")
+lastNames = pd.read_csv("last_names.csv")
+subjects = pd.read_csv("subjects.csv")
 
 #Creatian of a main table
 data = pd.DataFrame(columns=['Student Id', 'Name', 'Subject', 'Grade'])
