@@ -25,7 +25,7 @@ if 'numberSubjects' not in st.session_state:
 if 'gradesPerSubject' not in st.session_state:
     st.session_state['gradesPerSubject'] = 3
 if 'minimumGrade' not in st.session_state:
-    st.session_state['minimumGrade'] = 0
+    st.session_state['minimumGrade'] = 1
 if 'maximumGrade' not in st.session_state:
     st.session_state['maximumGrade'] = 60
 
@@ -44,7 +44,7 @@ with st.sidebar:
                                                            value=st.session_state['gradesPerSubject'],
                                                            step=1)
     st.session_state['minimumGrade'] = st.number_input("Minimum grade",
-                                                       min_value=0, max_value=60,
+                                                       min_value=1, max_value=60,
                                                        value=st.session_state['minimumGrade'],
                                                        step=1)
     st.session_state['maximumGrade'] = st.number_input("Maximum grade",
