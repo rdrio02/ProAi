@@ -126,13 +126,11 @@ ax.set_ylabel('Density')
 with col1:
     st.write(data)
     st.pyplot(fig_seaborn)
-    st.pyplot(fig)
-    st.plotly_chart(fig_plotly_histogram)
+
 
 
 with col2:
     statistics = df.describe()
     st.write(statistics)
-    st.plotly_chart(fig_plotly_histogram)
     st.pyplot(fig)
-
+    st.plotly_chart(fig_plotly_histogram)
